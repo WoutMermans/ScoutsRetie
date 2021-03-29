@@ -19,7 +19,7 @@ public class TakController {
     private TakRepository takRepository;
 
     @GetMapping({"/takdetails", "/takdetails/{takId}"})
-    public String artistDetails(Model model, @PathVariable(required = false) Integer takId) {
+    public String takDetails(Model model, @PathVariable(required = false) Integer takId) {
         if (takId == null) return "takdetails";
         Optional<Tak> optionalTak = takRepository.findById(takId);
         if (optionalTak.isPresent()) {

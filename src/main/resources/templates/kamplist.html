@@ -1,0 +1,29 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" type="text/css" media="all" th:href="@{/css/scouts.css}" href="/css/scouts.css"/>
+<head>
+    <meta charset="UTF-8">
+    <title>takList</title>
+</head>
+<body>
+<div class="nav">
+    <div th:replace="fragments/header :: header">Hier komt de header</div>
+</div>
+<div>
+    <div class="row1">
+        <div class="row1content">
+            <h2>Kampen</h2>
+
+            <span class="flex-box activeFilter" th:text="|${nrKampen} kampen gevonden|"></span>
+
+            <div th:each="kamp, status: ${kampen}">
+                <a class="buttonLook mediumButton" th:href="@{'/kampdetails/' + ${kamp.id}}">
+                    <span th:text="${kamp.getKampLabel()}"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:replace="fragments/footer :: footer">Hier komt de footer</div>
+</body>
+</html>

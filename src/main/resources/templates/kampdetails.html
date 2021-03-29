@@ -1,0 +1,45 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" type="text/css" media="all" th:href="@{/css/scouts.css}" href="/css/scouts.css"/>
+<head>
+    <meta charset="UTF-8">
+    <title>kampdetails</title>
+</head>
+<body>
+<div>
+    <div class="nav">
+        <div th:replace="fragments/header :: header">Hier komt de header</div>
+    </div>
+
+    <div class="row1">
+        <div class="row1content">
+            <div class="prevButtonDiv">
+                <a class="buttonLook prevnextButton" th:href="@{'/kampdetails/'+${prev}}">&lt;</a>
+            </div>
+            <div class="nextButtonDiv">
+                <a class="buttonLook prevnextButton" th:href="@{'/kampdetails/'+${next}}">&gt;</a>
+            </div>
+
+            <div>
+                <h2 th:if="${kamp}" th:text="|Kamp: ${kamp.kampLabel}|">kamp: onbekend</h2>
+                <p th:unless="${kamp}">Kamp: onbekend</p>
+            </div>
+            <br>
+            <div th:if="${kamp}">
+                <p><strong>Locatie & datum</strong></p>
+                <div><p th:text="${kamp.getKampLocatie()}"></p></div>
+                <div><p th:text="${kamp.kampDatum}"></p></div>
+                <br>
+                <p><strong>info</strong></p>
+                <div><p th:text="${kamp.kampInfo}"></p></div>
+                <br>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<div th:replace="fragments/footer :: footer">Hier komt de footer</div>
+
+</body>
+</html>

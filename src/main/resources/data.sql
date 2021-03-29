@@ -45,6 +45,37 @@ VALUES(6, 'Leiding', 'Wat is Jin zijn? Dat bepalen ze zelf.
     'Leeftijd vanaf 18 jaar');
 
 
+INSERT INTO KAMP (ID, KAMP_LOCATIE, KAMP_INFO, KAMP_DATUM, KAMP_LABEL)
+VALUES (1,'Scherpenheuvel', 'We zaten tijdens dit kamp in Scherpenheuvel',
+'2014-07-13 tot 2014-07-23', 'Scherpenheuvel 2014');
+
+INSERT INTO KAMP (ID, KAMP_LOCATIE, KAMP_INFO, KAMP_DATUM, KAMP_LABEL)
+VALUES (2,'Geel', 'We zaten tijdens dit kamp in Geel',
+'2015-07-02 tot 2015-07-12', 'Geel 2015');
+
+INSERT INTO KAMP (ID, KAMP_LOCATIE, KAMP_INFO, KAMP_DATUM, KAMP_LABEL)
+VALUES (3,'Vielsalm', 'We zaten tijdens dit kamp in Vielsalm',
+'2016-07-07 tot 2016-07-17','Vielsalm 2016');
+
+INSERT INTO KAMP (ID, KAMP_LOCATIE, KAMP_INFO, KAMP_DATUM, KAMP_LABEL)
+VALUES (4,'Bree', 'We zaten tijdens dit kamp in Bree',
+'2017-07-08 tot 2017-07-18', 'Bree 2017');
+
+INSERT INTO KAMP (ID, KAMP_LOCATIE, KAMP_INFO, KAMP_DATUM, KAMP_LABEL)
+VALUES (5,'Westerloo', 'We zaten tijdens dit kamp in Westerloo',
+'van 2018-07-06 tot 2018-07-16','Westerloo 2018');
+
+INSERT INTO KAMP (ID, KAMP_LOCATIE, KAMP_INFO, KAMP_DATUM, KAMP_LABEL)
+VALUES (6,'Brecht', 'We zaten tijdens dit kamp in Brecht',
+'2019-07-05 tot 2019-07-15', 'Brecht 2019');
+
+INSERT INTO KAMP (ID, KAMP_LOCATIE, KAMP_INFO, KAMP_DATUM, KAMP_LABEL)
+VALUES (7,'Geel', 'We zaten tijdens dit kamp in Geel',
+'2020-07-03 tot 2020-07-16', 'Geel 2020');
+
+
+
+
 
 
 

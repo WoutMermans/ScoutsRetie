@@ -12,11 +12,10 @@ public interface KampRepository extends CrudRepository<Kamp, Integer> {
 
 
     @Query("SELECT a FROM Kamp a " +
-            "WHERE :word IS NULL OR LOWER(a.kampNaam) LIKE LOWER(CONCAT('%',:word,'%'))" +
-            "OR LOWER(a.kampLocatie) LIKE LOWER(CONCAT('%',:word,'%'))" +
+            "WHERE :word IS NULL OR LOWER(a.kampLocatie) LIKE LOWER(CONCAT('%',:word,'%'))" +
             "OR LOWER(a.kampInfo) LIKE LOWER(CONCAT('%',:word,'%'))" +
-            "OR LOWER(a.kampBeginDatum) LIKE LOWER(CONCAT('%',:word,'%'))" +
-            "OR LOWER(a.kampEindDatum) LIKE LOWER(CONCAT('%',:word,'%'))")
+            "OR LOWER(a.kampDatum) LIKE LOWER(CONCAT('%',:word,'%'))" +
+            "OR LOWER(a.kampLabel) LIKE LOWER(CONCAT('%',:word,'%'))")
     List<Kamp> findByall();
 
 }

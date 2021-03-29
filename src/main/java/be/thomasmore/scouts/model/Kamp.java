@@ -7,14 +7,11 @@ import java.util.Date;
 public class Kamp {
     @Id
     private int id;
-    private String kampNaam;
     @Column(length = 1000)
     private String kampInfo;
+    private String kampLabel;
     private String kampLocatie;
-    @Temporal(TemporalType.DATE)
-    private Date kampBeginDatum;
-    @Temporal(TemporalType.DATE)
-    private Date kampEindDatum;
+    private String kampDatum;
 
 
     public Kamp(){
@@ -26,14 +23,6 @@ public class Kamp {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public String getKampNaam() {
-        return kampNaam;
-    }
-
-    public void setKampNaam(String kampNaam) {
-        this.kampNaam = kampNaam;
     }
 
     public String getKampInfo() {
@@ -52,19 +41,19 @@ public class Kamp {
         this.kampLocatie = kampLocatie;
     }
 
-    public Date getKampBeginDatum() {
-        return kampBeginDatum;
+    public String getKampDatum() {
+        return kampDatum;
     }
 
-    public void setKampBeginDatum(Date kampBeginDatum) {
-        this.kampBeginDatum = kampBeginDatum;
+    public void setKampDatum(String kampDatum) {
+        this.kampDatum = kampDatum;
     }
 
-    public Date getKampEindDatum() {
-        return kampEindDatum;
+    public String getKampLabel() {
+        return kampLabel;
     }
 
-    public void setKampEindDatum(Date kampEindDatum) {
-        this.kampEindDatum = kampEindDatum;
+    public void setKampLabel(String kampLabel) {
+        this.kampLabel = kampLabel;
     }
 }
