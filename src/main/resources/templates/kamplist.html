@@ -16,6 +16,10 @@
 
             <span class="flex-box activeFilter" th:text="|${nrKampen} kampen gevonden|"></span>
 
+            <div class="newButtonDiv">
+                <a class="buttonLook smallButton" th:href="@{'/admin/partynew/'}">New</a>
+            </div>
+            
             <div th:each="kamp, status: ${kampen}">
                 <a class="buttonLook mediumButton" th:href="@{'/kampdetails/' + ${kamp.id}}">
                     <span th:text="${kamp.getKampLabel()}"></span>

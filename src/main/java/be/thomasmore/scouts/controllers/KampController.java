@@ -38,4 +38,6 @@ public class KampController {
         model.addAttribute("nrKampen", kampRepository.count());
         return "kamplist";
     }
+
+
 }

@@ -5,6 +5,8 @@ import java.util.Date;
 
 @Entity
 public class Kamp {
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "kamp_generator")
+    @SequenceGenerator(name = "kamp_generator", sequenceName = "kamp_seq", allocationSize = 1)
     @Id
     private int id;
     @Column(length = 1000)

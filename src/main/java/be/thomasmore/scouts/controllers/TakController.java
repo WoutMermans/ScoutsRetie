@@ -37,4 +37,21 @@ public class TakController {
         model.addAttribute("nrTakken", takRepository.count());
         return "taklist";
     }
+    @GetMapping("/taklist/filter")
+    public String taklist(Model model, @RequestParam(required = false) String keyWord) {
+        Iterable<Tak> takken = takRepository.findAll();
+        boolean showFilter = true;
+        model.addAttribute("showFilter", showFilter);
+        long nrTakken;
+
+        takken = takRepository.findByKeyword(keyWord);
+        Collection takCol = (Collection<Tak>) takken;
+        nrTakken = takCol.size();
+
+        model.addAttribute("keyWord", keyWord);
+        model.addAttribute("nrTakken", nrTakken);
+        model.addAttribute("takken", takken);
+        model.addAttribute("showFilter", true);
+        return "taklist";
+    }
 }

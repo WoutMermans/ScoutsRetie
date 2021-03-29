@@ -42,6 +42,34 @@ pb {
     margin-left: 40px;
 }
 
+.editButtonDiv {
+    position: fixed;
+    top: 160px;
+}
+.saveButtonDiv {
+    position: fixed;
+    right: 110px;
+    top: 160px;
+}
+
+.backButtonDiv {
+    position: fixed;
+    right: 11px;
+    top: 160px;
+}
+.buttonLook {
+    background-color: #EDC7CF;
+    color: #6A8E7F;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 1px 1px 1px darkgrey;
+}
+
+.filterButton {
+    margin: 0 2px;
+    width: 2em;
+    padding: 0.2em;
+}
 
 .nav {
     padding-left: 90px;

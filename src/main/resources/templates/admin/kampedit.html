@@ -1,0 +1,56 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" type="text/css" media="all" th:href="@{/css/scouts.css}" href="/css/scouts.css"/>
+<head>
+    <meta charset="UTF-8">
+    <title>kampen</title>
+</head>
+<body>
+
+<div th:replace="fragments/headerfooter :: header">Hier komt de header</div>
+<div class="row1content" th:if="${kamp}" th:object="${kamp}">
+    <div>
+        <h2 th:if="${kamp}" th:text="|kamp: ${kamp.getKampLabel()}|">kamp: onbekend</h2>
+        <p th:unless="${kamp}">kamp: onbekend</p>
+    </div>
+
+    <div class="editButtonDiv">
+        <a class="buttonLook smallButton" th:href="@{'/kampdetails/'+ ${kamp.getId()}}">Back</a>
+    </div>
+
+
+    <div th:if="${kamp}">
+
+        <div class="info">
+                <form th:action="@{|/admin/kampedit/${kamp.id}|}" th:object="${kamp}" method="post">
+
+                <label for="kampEditLocatie">Locatie:</label>
+                <input type="text" id="kampEditLocatie" class="editfield" th:field="*{kampLocatie}">
+                <div class="saveButtonDiv">
+                    <input class="buttonLook smallButton" type="submit" value="Save">
+                </div>
+                <br>
+
+                <label for="kampEditdatum">Datum:</label>
+                <input type="text" id="kampEditdatum" class="editfield" th:field="*{kampDatum}">
+                <div class="saveButtonDiv">
+                    <input class="buttonLook smallButton" type="submit" value="Save">
+                </div>
+                <br>
+
+                <label for="kampEditInfo">Info:</label>
+                <input type="text" id="kampEditInfo" class="editfield" th:field="*{kampInfo}">
+                <div class="saveButtonDiv">
+                    <input class="buttonLook smallButton" type="submit" value="Save">
+                </div>
+                <br>
+            </form>
+        </div>
+        <br>
+    </div>
+</div>
+</div>
+</div>
+<div th:replace="fragments/headerfooter :: footer">Hier komt de footer</div>
+</body>
+</html>

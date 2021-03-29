@@ -15,6 +15,7 @@ public interface TakRepository extends CrudRepository<Tak, Integer> {
             "WHERE :word IS NULL OR LOWER(a.takName) LIKE LOWER(CONCAT('%',:word,'%'))" +
             "OR LOWER(a.takInfo) LIKE LOWER(CONCAT('%',:word,'%'))" +
             "OR LOWER(a.takLeeftijd) LIKE LOWER(CONCAT('%',:word,'%'))")
-    List<Tak> findByall();
+    List<Tak> findByKeyword(@Param("word") String word);
+
 
 }

@@ -1,0 +1,58 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" type="text/css" media="all" th:href="@{/css/scouts.css}" href="/css/scouts.css"/>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:replace="fragments/header :: header">Hier komt de header</div>
+
+<div class="row1">
+    <div class="row1content">
+
+
+        <h2>Nieuw kamp</h2>
+
+
+        <div class="info">
+            <form th:action="@{|/admin/kampnew|}" method="post" th:object="${kamp}">
+
+                <label for="kampLabel">Kamp label:</label>
+                <input type="text" id="kampLabel" class="editfield" th:field="*{kampLabel}"/>
+                <div class="saveButtonDiv">
+                    <input class="buttonLook smallButton" type="submit" value="Save"/>
+                </div>
+                <br>
+
+                <label for="kampLocation">Locatie:</label>
+                <input type="text" id="kampLocation" th:field="*{kampLocatie}"/>
+                <div class="saveButtonDiv">
+                    <input class="buttonLook smallButton" type="submit" value="Save"/>
+                </div>
+                <br>
+
+                <label for="kampDatum">Kamp datum:</label>
+                <input type="text" id="kampDatum" th:field="*{kampDatum}"/>
+                <div class="saveButtonDiv">
+                    <input class="buttonLook smallButton" type="submit" value="Save"/>
+                </div>
+                <br>
+
+                <label for="kampInfo">Kamp info:</label>
+                <input type="text" id="kampInfo" th:field="*{kampInfo}"/>
+                <div class="saveButtonDiv">
+                    <input class="buttonLook smallButton" type="submit" value="Save"/>
+                </div>
+            </form>
+
+            <br>
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+<div th:replace="fragments/footer :: footer">Hier komt de footer</div>
+</html>

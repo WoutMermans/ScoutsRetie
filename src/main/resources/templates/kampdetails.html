@@ -19,6 +19,9 @@
             <div class="nextButtonDiv">
                 <a class="buttonLook prevnextButton" th:href="@{'/kampdetails/'+${next}}">&gt;</a>
             </div>
+            <div class="editButtonDiv">
+                <a class="buttonLook smallButton" th:href="@{'/admin/kampedit/'+ ${kamp.getId()}}">Edit</a>
+            </div>
 
             <div>
                 <h2 th:if="${kamp}" th:text="|Kamp: ${kamp.kampLabel}|">kamp: onbekend</h2>
