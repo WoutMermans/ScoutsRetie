@@ -1,0 +1,18 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" type="text/css" media="all" th:href="@{/css/scouts.css}" href="/css/scouts.css"/>
+<head>
+    <meta charset="UTF-8">
+    <title>Errorpagina</title>
+</head>
+<body>
+<div class="nav">
+    <div th:replace="fragments/header :: header">Hier komt de header</div>
+</div>
+<div>
+    <h2>Ai, er is iets fouts gegaan.</h2>
+</div>
+<div th:replace="fragments/footer :: footer">Hier komt de footer</div>
+
+</body>
+</html>
