@@ -31,7 +31,8 @@
             <div th:if="${kamp}">
                 <p><strong>Locatie & datum</strong></p>
                 <div><p th:text="${kamp.getKampLocatie()}"></p></div>
-                <div><p th:text="${kamp.kampDatum}"></p></div>
+                <div><p th:text="${kamp.kampBeginDatum}" ></p></div>
+                <div><p th:text="${kamp.kampEindDatum}" ></p></div>
                 <br>
                 <p><strong>info</strong></p>
                 <div><p th:text="${kamp.kampInfo}"></p></div>

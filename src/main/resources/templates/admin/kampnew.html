@@ -8,13 +8,11 @@
 <body>
 <div th:replace="fragments/header :: header">Hier komt de header</div>
 
-<div class="row1">
+<div class="row1" th:object="${kamp}">
     <div class="row1content">
 
 
         <h2>Nieuw kamp</h2>
-
-
         <div class="info">
             <form th:action="@{|/admin/kampnew|}" method="post" th:object="${kamp}">
 
@@ -26,21 +24,28 @@
                 <br>
 
                 <label for="kampLocation">Locatie:</label>
-                <input type="text" id="kampLocation" th:field="*{kampLocatie}"/>
+                <input type="text" id="kampLocation" class="editfield" th:field="*{kampLocatie}"/>
                 <div class="saveButtonDiv">
                     <input class="buttonLook smallButton" type="submit" value="Save"/>
                 </div>
                 <br>
 
-                <label for="kampDatum">Kamp datum:</label>
-                <input type="text" id="kampDatum" th:field="*{kampDatum}"/>
+                <label for="kampBeginDatum">Kamp begin datum:</label>
+                <input type="date" id="kampBeginDatum" class="editfield" th:field="*{kampBeginDatum}"/>
+                <div class="saveButtonDiv">
+                    <input class="buttonLook smallButton" type="submit" value="Save"/>
+                </div>
+                <br>
+
+                <label for="kampEindDatum">Kamp eind datum:</label>
+                <input type="date" id="kampEindDatum" class="editfield" th:field="*{kampEindDatum}"/>
                 <div class="saveButtonDiv">
                     <input class="buttonLook smallButton" type="submit" value="Save"/>
                 </div>
                 <br>
 
                 <label for="kampInfo">Kamp info:</label>
-                <input type="text" id="kampInfo" th:field="*{kampInfo}"/>
+                <textarea type="text" id="kampInfo" class="editfield" th:field="*{kampInfo}"/>
                 <div class="saveButtonDiv">
                     <input class="buttonLook smallButton" type="submit" value="Save"/>
                 </div>

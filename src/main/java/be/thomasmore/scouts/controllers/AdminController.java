@@ -43,7 +43,8 @@ public class AdminController {
             Kamp editedkamp = optionalKamp.get();
             editedkamp.setKampLabel(kamp.getKampLabel());
             editedkamp.setKampLocatie(kamp.getKampLocatie());
-            editedkamp.setKampDatum(kamp.getKampDatum());
+            editedkamp.setKampBeginDatum(kamp.getKampBeginDatum());
+            editedkamp.setKampEindDatum(kamp.getKampEindDatum());
             editedkamp.setKampInfo(kamp.getKampInfo());
             kampRepository.save(editedkamp);
             model.addAttribute("kamp", editedkamp);

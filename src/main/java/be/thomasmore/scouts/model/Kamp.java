@@ -1,4 +1,7 @@
 package be.thomasmore.scouts.model;
+import com.sun.istack.NotNull;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -13,7 +16,12 @@ public class Kamp {
     private String kampInfo;
     private String kampLabel;
     private String kampLocatie;
-    private String kampDatum;
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date kampBeginDatum;
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date kampEindDatum;
 
 
     public Kamp(){
@@ -43,19 +51,27 @@ public class Kamp {
         this.kampLocatie = kampLocatie;
     }
 
-    public String getKampDatum() {
-        return kampDatum;
-    }
-
-    public void setKampDatum(String kampDatum) {
-        this.kampDatum = kampDatum;
-    }
-
     public String getKampLabel() {
         return kampLabel;
     }
 
     public void setKampLabel(String kampLabel) {
         this.kampLabel = kampLabel;
+    }
+
+    public Date getKampBeginDatum() {
+        return kampBeginDatum;
+    }
+
+    public void setKampBeginDatum(Date kampBeginDatum) {
+        this.kampBeginDatum = kampBeginDatum;
+    }
+
+    public Date getKampEindDatum() {
+        return kampEindDatum;
+    }
+
+    public void setKampEindDatum(Date kampEindDatum) {
+        this.kampEindDatum = kampEindDatum;
     }
 }

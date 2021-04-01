@@ -229,8 +229,9 @@ pb {
 }
 
 .editfield {
-    margin-left: 8px;
+    margin-left: 360px;
     font-size: 1em;
+
 }
 
 textarea.editfield {

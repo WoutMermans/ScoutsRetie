@@ -7,50 +7,64 @@
 </head>
 <body>
 
-<div th:replace="fragments/headerfooter :: header">Hier komt de header</div>
-<div class="row1content" th:if="${kamp}" th:object="${kamp}">
-    <div>
-        <h2 th:if="${kamp}" th:text="|kamp: ${kamp.getKampLabel()}|">kamp: onbekend</h2>
-        <p th:unless="${kamp}">kamp: onbekend</p>
-    </div>
+<div th:replace="fragments/header :: header">Hier komt de header</div>
+<div class="row1"th:object="${kamp}">
+    <div class="row1content">
+        <div>
+            <h2 th:if="${kamp}" th:text="|kamp: ${kamp.getKampLabel()}|">kamp: onbekend</h2>
+            <p th:unless="${kamp}">kamp: onbekend</p>
+        </div>
 
-    <div class="editButtonDiv">
-        <a class="buttonLook smallButton" th:href="@{'/kampdetails/'+ ${kamp.getId()}}">Back</a>
-    </div>
+        <div class="editButtonDiv">
+            <a class="buttonLook smallButton" th:href="@{'/kampdetails/'+ ${kamp.getId()}}">Back</a>
+        </div>
 
 
-    <div th:if="${kamp}">
+        <div th:if="${kamp}">
 
-        <div class="info">
+            <div class="info">
                 <form th:action="@{|/admin/kampedit/${kamp.id}|}" th:object="${kamp}" method="post">
 
-                <label for="kampEditLocatie">Locatie:</label>
-                <input type="text" id="kampEditLocatie" class="editfield" th:field="*{kampLocatie}">
-                <div class="saveButtonDiv">
-                    <input class="buttonLook smallButton" type="submit" value="Save">
-                </div>
-                <br>
+                    <label for="kampEditLabel">Kamp label:</label>
+                    <input type="text" id="kampEditLabel" class="editfield" th:field="*{kampLabel}"/>
+                    <div class="saveButtonDiv">
+                        <input class="buttonLook smallButton" type="submit" value="Save"/>
+                    </div>
+                    <br>
 
-                <label for="kampEditdatum">Datum:</label>
-                <input type="text" id="kampEditdatum" class="editfield" th:field="*{kampDatum}">
-                <div class="saveButtonDiv">
-                    <input class="buttonLook smallButton" type="submit" value="Save">
-                </div>
-                <br>
+                    <label for="kampEditLocatie">Locatie:</label>
+                    <input type="text" id="kampEditLocatie" class="editfield" th:field="*{kampLocatie}">
+                    <div class="saveButtonDiv">
+                        <input class="buttonLook smallButton" type="submit" value="Save">
+                    </div>
+                    <br>
 
-                <label for="kampEditInfo">Info:</label>
-                <input type="text" id="kampEditInfo" class="editfield" th:field="*{kampInfo}">
-                <div class="saveButtonDiv">
-                    <input class="buttonLook smallButton" type="submit" value="Save">
-                </div>
-                <br>
-            </form>
+                    <label for="kampEditBegindatum">Datum:</label>
+                    <input type="date" id="kampEditBeginDatum" class="editfield" th:field="*{kampBeginDatum}">
+                    <div class="saveButtonDiv">
+                        <input class="buttonLook smallButton" type="submit" value="Save">
+                    </div>
+                    <br>
+                    <label for="kampEditEinddatum">Datum:</label>
+                    <input type="date" id="kampEditEindDatum" class="editfield" th:field="*{kampEindDatum}">
+                    <div class="saveButtonDiv">
+                        <input class="buttonLook smallButton" type="submit" value="Save">
+                    </div>
+                    <br>
+
+                    <label for="kampEditInfo">Info:</label>
+                    <textarea type="text" id="kampEditInfo" class="editfield" th:field="*{kampInfo}"></textarea>
+                    <div class="saveButtonDiv">
+                        <input class="buttonLook smallButton" type="submit" value="Save">
+                    </div>
+                    <br>
+                </form>
+            </div>
+            <br>
         </div>
-        <br>
     </div>
 </div>
 </div>
-</div>
-<div th:replace="fragments/headerfooter :: footer">Hier komt de footer</div>
+<div th:replace="fragments/footer :: footer">Hier komt de footer</div>
 </body>
 </html>
