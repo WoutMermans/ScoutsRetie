@@ -48,13 +48,13 @@
                     <a th:href="@{/taklist/filter}" class="buttonLook filterButton">+</a>
                 </div>
             </div>
-        <div th:each="tak, status: ${takken}">
-            <a class="buttonLook mediumButton" th:href="@{'/takdetails/' + ${tak.id}}">
-                <span th:text="${tak.getTakName()}"></span>
-            </a>
+            <div th:each="tak, status: ${takken}">
+                <a class="buttonLook mediumButton" th:href="@{'/takdetails/' + ${tak.id}}">
+                    <span th:text="${tak.getTakName()}"></span>
+                </a>
+            </div>
         </div>
     </div>
-</div>
 </div>
 <div th:replace="fragments/footer :: footer">Hier komt de footer</div>
 </body>
