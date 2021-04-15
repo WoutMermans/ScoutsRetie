@@ -36,7 +36,13 @@
             </div>
         </div>
     </div>
-
+    <div class="row1content">
+        <h3 th:if="${tak.getLeiding().size()}>0">Leiders</h3>
+        <div th:each="leiding, status: ${tak.getLeiding()}">
+            <a class="buttonLook mediumButton" th:href="@{'/leidingdetails/' + ${tak.id}}">
+                <span th:text="${leiding.getLeiderName()}"></span></a>
+        </div>
+    </div>
 
 </div>
 <div th:replace="fragments/footer :: footer">Hier komt de footer</div>
