@@ -1,6 +1,9 @@
 package be.thomasmore.scouts.model;
 
+import org.hibernate.annotations.ManyToAny;
+
 import javax.persistence.*;
+import java.util.Collection;
 
 
 @Entity
@@ -13,6 +16,8 @@ public class Leiding {
     private int leiderLeeftijd;
     @Column(length = 1000)
     private String leiderBio;
+    @ManyToMany(fetch = FetchType.LAZY)
+    private Collection<Tak> takken;
 
     public Leiding(){
     }
@@ -47,5 +52,13 @@ public class Leiding {
 
     public void setLeiderBio(String leiderBio) {
         this.leiderBio = leiderBio;
+    }
+
+    public Collection<Tak> getTakken() {
+        return takken;
+    }
+
+    public void setTakken(Collection<Tak> takken) {
+        this.takken = takken;
     }
 }

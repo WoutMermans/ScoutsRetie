@@ -1,0 +1,55 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" type="text/css" media="all" th:href="@{/css/scouts.css}" href="/css/scouts.css"/>
+<head>
+    <meta charset="UTF-8">
+    <title>leiding</title>
+</head>
+<body>
+
+<div th:replace="fragments/header :: header">Hier komt de header</div>
+<div class="row1" th:object="${leiding}">
+    <div class="row1content">
+        <div>
+            <h2 th:if="${leiding}" th:text="|leiding: ${leiding.getLeiderName()}|">leider: onbekend</h2>
+            <p th:unless="${leiding}">leiding: onbekend</p>
+        </div>
+
+        <div class="editButtonDiv">
+            <a class="buttonLook smallButton" th:href="@{'/leidingdetails/'+ ${leiding.getId()}}">Back</a>
+        </div>
+
+
+        <div th:if="${leiding}">
+
+            <div class="info">
+                <form th:action="@{|/admin/leidingedit/${leiding.id}|}" th:object="${leiding}" method="post">
+
+                    <label for="kampEditLabel">Naam:</label>
+                    <input type="text" id="kampEditLabel" class="editfield" th:field="*{leiderName}"/>
+                    <div class="saveButtonDiv">
+                        <input class="buttonLook smallButton" type="submit" value="Save"/>
+                    </div>
+                    <br>
+
+                    <label for="kampEditLocatie">Leeftijd:</label>
+                    <input type="text" id="kampEditLocatie" class="editfield" th:field="*{leiderLeeftijd}">
+                    <div class="saveButtonDiv">
+                        <input class="buttonLook smallButton" type="submit" value="Save">
+                    </div>
+                    <br>
+
+                    <label for="kampEditBegindatum">Bio:</label>
+                    <textarea type="text" id="kampEditBegindatum" class="editfield" th:field="*{leiderBio}"></textarea>
+                    <div class="saveButtonDiv">
+                        <input class="buttonLook smallButton" type="submit" value="Save">
+                    </div>
+                    <br>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:replace="fragments/footer :: footer">Hier komt de footer</div>
+</body>
+</html>

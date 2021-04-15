@@ -21,7 +21,7 @@ public class KampController {
 
     @GetMapping({"/kampdetails", "/kampdetails/{kampId}"})
     public String kampDetails(Model model, @PathVariable(required = false) Integer kampId) {
-        if (kampId == null) return "takdetails";
+        if (kampId == null) return "kampdetails";
         Optional<Kamp> optionalKamp = kampRepository.findById(kampId);
         if (optionalKamp.isPresent()) {
             model.addAttribute("kamp", optionalKamp.get());
@@ -38,6 +38,4 @@ public class KampController {
         model.addAttribute("nrKampen", kampRepository.count());
         return "kamplist";
     }
-
-
 }

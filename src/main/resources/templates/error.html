@@ -6,13 +6,24 @@
     <title>Errorpagina</title>
 </head>
 <body>
-<div class="nav">
-    <div th:replace="fragments/header :: header">Hier komt de header</div>
+<div th:fragment="header">
+    <div class="nav">
+        <h1>Scouts Retie</h1>
+        <div class="freespaceforheader"></div>
+    </div>
 </div>
 <div>
     <h2>Ai, er is iets fouts gegaan.</h2>
 </div>
+<div class="row1">
+    <div class="row1content">
+        <a class="buttonLook mediumButton" th:href="@{'/home/'}">Homepagina</a>
+        <a class="buttonLook mediumButton" th:href="@{'/taklist/'}">lakkenlijst</a>
+        <a class="buttonLook mediumButton" th:href="@{'/kamplist/'}">kamplijst</a>
+        <a class="buttonLook mediumButton" th:href="@{'/leidinglist/'}">leiders</a>
+        <a class="buttonLook mediumButton" th:href="@{'/about/'}">over ons</a>
+    </div>
+</div>
 <div th:replace="fragments/footer :: footer">Hier komt de footer</div>
-
 </body>
 </html>

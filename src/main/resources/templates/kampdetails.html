@@ -31,23 +31,24 @@
             <div th:if="${kamp}">
                 <p><strong>Locatie & datum</strong></p>
                 <div><p th:text="${kamp.getKampLocatie()}"></p></div>
-                <div><p th:text="${kamp.kampBeginDatum}" ></p></div>
-                <div><p th:text="${kamp.kampEindDatum}" ></p></div>
+                <div><p th:text="${kamp.kampBeginDatum}"></p></div>
+                <div><p th:text="${kamp.kampEindDatum}"></p></div>
                 <br>
                 <p><strong>info</strong></p>
                 <div><p th:text="${kamp.kampInfo}"></p></div>
                 <br>
             </div>
         </div>
-        <h3 th:if="${kamp.getTakken().size()}>0">Takken aanwezig </h3>
-        <div th:each="tak, status: ${kamp.getTakken()}">
-            <a class="buttonLook mediumButton" th:href="@{'/takdetails/' + ${tak.id}}">
-                <span th:text="${tak.getTakName()}"></span></a>
+        <div class="row1content">
+            <h3 th:if="${kamp.getTakken().size()}>0">Takken aanwezig </h3>
+            <div th:each="tak, status: ${kamp.getTakken()}">
+                <a class="buttonLook mediumButton" th:href="@{'/takdetails/' + ${tak.id}}">
+                    <span th:text="${tak.getTakName()}"></span></a>
+            </div>
         </div>
     </div>
-    </div>
 
-
+</div>
 </div>
 <div th:replace="fragments/footer :: footer">Hier komt de footer</div>
 

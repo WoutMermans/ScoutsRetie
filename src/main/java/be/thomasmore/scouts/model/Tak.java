@@ -13,6 +13,8 @@ public class Tak {
     private String takInfo;
     @ManyToMany(mappedBy = "takken", fetch = FetchType.LAZY)
     private Collection<Kamp> kampen;
+    @ManyToMany(mappedBy = "takken", fetch = FetchType.LAZY)
+    private Collection<Leiding> leiding;
 
     public Tak() {
 
@@ -56,5 +58,13 @@ public class Tak {
 
     public void setKampen(Collection<Kamp> kampen) {
         this.kampen = kampen;
+    }
+
+    public Collection<Leiding> getLeiding() {
+        return leiding;
+    }
+
+    public void setLeiding(Collection<Leiding> leiding) {
+        this.leiding = leiding;
     }
 }

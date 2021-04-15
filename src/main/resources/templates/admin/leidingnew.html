@@ -1,0 +1,45 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" type="text/css" media="all" th:href="@{/css/scouts.css}" href="/css/scouts.css"/>
+<head>
+    <meta charset="UTF-8">
+    <title>Leiding</title>
+</head>
+<body>
+<div th:replace="fragments/header :: header">Hier komt de header</div>
+
+<div class="row1" th:object="${leiding}">
+    <div class="row1content">
+
+
+        <h2>Nieuwe leider</h2>
+        <div class="info">
+            <form th:action="@{|/admin/leidingnew|}" method="post" th:object="${leiding}">
+
+                <label for="leiderName">Naam:</label>
+                <input type="text" id="leiderName" class="editfield" th:field="*{leiderName}"/>
+                <div class="saveButtonDiv">
+                    <input class="buttonLook smallButton" type="submit" value="Save"/>
+                </div>
+                <br>
+
+                <label for="leiderLeeftijd">Leeftijd:</label>
+                <input type="number" id="leiderLeeftijd" class="editfield" th:field="*{leiderLeeftijd}"/>
+                <div class="saveButtonDiv">
+                    <input class="buttonLook smallButton" type="submit" value="Save"/>
+                </div>
+                <br>
+
+                <label for="leiderbio">Bio:</label>
+                <textarea type="text" id="leiderbio" class="editfield" th:field="*{leiderBio}"></textarea>
+                <div class="saveButtonDiv">
+                    <input class="buttonLook smallButton" type="submit" value="Save"/>
+                </div>
+                <br>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+<div th:replace="fragments/footer :: footer">Hier komt de footer</div>
+</html>
