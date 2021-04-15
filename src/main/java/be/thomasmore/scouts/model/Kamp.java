@@ -3,6 +3,7 @@ import com.sun.istack.NotNull;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.Date;
 
 
@@ -22,6 +23,8 @@ public class Kamp {
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date kampEindDatum;
+    @ManyToMany(fetch = FetchType.LAZY)
+    private Collection<Tak> takken;
 
 
     public Kamp(){
@@ -73,5 +76,13 @@ public class Kamp {
 
     public void setKampEindDatum(Date kampEindDatum) {
         this.kampEindDatum = kampEindDatum;
+    }
+
+    public Collection<Tak> getTakken() {
+        return takken;
+    }
+
+    public void setAnimals(Collection<Tak> takken) {
+        this.takken = takken;
     }
 }

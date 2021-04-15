@@ -73,6 +73,63 @@ INSERT INTO KAMP (ID, KAMP_LOCATIE, KAMP_INFO, KAMP_BEGIN_DATUM,KAMP_EIND_DATUM,
 VALUES (nextval('KAMP_SEQ'),'Geel', 'We zaten tijdens dit kamp in Geel',
 '2020-07-03', '2020-07-16', 'Geel 2020');
 
+INSERT into LEIDING(ID, LEIDER_NAME, LEIDER_LEEFTIJD, LEIDER_BIO)
+values (nextval('LEIDING_SEQ'), 'Kobe Cuypers', 20, 'Ik ben Kobe!');
+
+INSERT into LEIDING(ID, LEIDER_NAME, LEIDER_LEEFTIJD, LEIDER_BIO)
+values (nextval('LEIDING_SEQ'), 'Wout Mermans', 21, 'Ik ben Wout!');
+
+INSERT into LEIDING(ID, LEIDER_NAME, LEIDER_LEEFTIJD, LEIDER_BIO)
+values (nextval('LEIDING_SEQ'), 'Louis Bosch', 20, 'Ik ben Louis!');
+
+INSERT into LEIDING(ID, LEIDER_NAME, LEIDER_LEEFTIJD, LEIDER_BIO)
+values (nextval('LEIDING_SEQ'), 'Pol Van Herck', 20, 'Ik ben Pol!');
+
+INSERT into LEIDING(ID, LEIDER_NAME, LEIDER_LEEFTIJD, LEIDER_BIO)
+values (nextval('LEIDING_SEQ'), 'Ties Van De Pol', 20, 'Ik ben !');
+
+INSERT into LEIDING(ID, LEIDER_NAME, LEIDER_LEEFTIJD, LEIDER_BIO)
+values (nextval('LEIDING_SEQ'), 'Lien Rommes', 21, 'Ik ben Lien!');
+
+INSERT into LEIDING(ID, LEIDER_NAME, LEIDER_LEEFTIJD, LEIDER_BIO)
+values (nextval('LEIDING_SEQ'), '', , 'Ik ben !');
+
+
+
+insert into KAMP_TAKKEN (KAMPEN_ID, TAKKEN_ID) values(1, 1);
+insert into KAMP_TAKKEN (KAMPEN_ID, TAKKEN_ID) values(1, 2);
+insert into KAMP_TAKKEN (KAMPEN_ID, TAKKEN_ID) values(1, 3);
+insert into KAMP_TAKKEN (KAMPEN_ID, TAKKEN_ID) values(1, 4);
+
+insert into KAMP_TAKKEN (KAMPEN_ID, TAKKEN_ID) values(2, 1);
+insert into KAMP_TAKKEN (KAMPEN_ID, TAKKEN_ID) values(2, 2);
+insert into KAMP_TAKKEN (KAMPEN_ID, TAKKEN_ID) values(2, 3);
+insert into KAMP_TAKKEN (KAMPEN_ID, TAKKEN_ID) values(2, 4);
+
+insert into KAMP_TAKKEN (KAMPEN_ID, TAKKEN_ID) values(3, 1);
+insert into KAMP_TAKKEN (KAMPEN_ID, TAKKEN_ID) values(3, 2);
+insert into KAMP_TAKKEN (KAMPEN_ID, TAKKEN_ID) values(3, 3);
+insert into KAMP_TAKKEN (KAMPEN_ID, TAKKEN_ID) values(3, 4);
+
+insert into KAMP_TAKKEN (KAMPEN_ID, TAKKEN_ID) values(4, 1);
+insert into KAMP_TAKKEN (KAMPEN_ID, TAKKEN_ID) values(4, 2);
+insert into KAMP_TAKKEN (KAMPEN_ID, TAKKEN_ID) values(4, 3);
+insert into KAMP_TAKKEN (KAMPEN_ID, TAKKEN_ID) values(4, 4);
+
+insert into KAMP_TAKKEN (KAMPEN_ID, TAKKEN_ID) values(5, 1);
+insert into KAMP_TAKKEN (KAMPEN_ID, TAKKEN_ID) values(5, 2);
+insert into KAMP_TAKKEN (KAMPEN_ID, TAKKEN_ID) values(5, 3);
+insert into KAMP_TAKKEN (KAMPEN_ID, TAKKEN_ID) values(5, 4);
+
+insert into KAMP_TAKKEN (KAMPEN_ID, TAKKEN_ID) values(6, 1);
+insert into KAMP_TAKKEN (KAMPEN_ID, TAKKEN_ID) values(6, 2);
+insert into KAMP_TAKKEN (KAMPEN_ID, TAKKEN_ID) values(6, 3);
+insert into KAMP_TAKKEN (KAMPEN_ID, TAKKEN_ID) values(6, 4);
+
+insert into KAMP_TAKKEN (KAMPEN_ID, TAKKEN_ID) values(7, 1);
+insert into KAMP_TAKKEN (KAMPEN_ID, TAKKEN_ID) values(7, 2);
+insert into KAMP_TAKKEN (KAMPEN_ID, TAKKEN_ID) values(7, 3);
+insert into KAMP_TAKKEN (KAMPEN_ID, TAKKEN_ID) values(7, 4);
 
 
 

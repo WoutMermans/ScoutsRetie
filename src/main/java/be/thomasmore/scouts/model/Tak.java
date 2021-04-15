@@ -1,8 +1,7 @@
 package be.thomasmore.scouts.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 public class Tak {
@@ -12,6 +11,8 @@ public class Tak {
     private String takLeeftijd;
     @Column(length = 1000)
     private String takInfo;
+    @ManyToMany(mappedBy = "takken", fetch = FetchType.LAZY)
+    private Collection<Kamp> kampen;
 
     public Tak() {
 
@@ -47,5 +48,13 @@ public class Tak {
 
     public void setId(int id) {
         Id = id;
+    }
+
+    public Collection<Kamp> getKampen() {
+        return kampen;
+    }
+
+    public void setKampen(Collection<Kamp> kampen) {
+        this.kampen = kampen;
     }
 }

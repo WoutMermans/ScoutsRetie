@@ -8,7 +8,7 @@ body {
 }
 
 h1 {
-    padding-left: 90px;
+    padding-left: 185px;
     margin: 0px 40px;
     text-align: left;
     font-size: 4em;
@@ -33,7 +33,7 @@ a {
 p {
     text-align: center;
     width: 500px;
-    margin-left: 240px;
+    margin-left: 250px;
 }
 
 
@@ -72,7 +72,7 @@ pb {
 }
 
 .nav {
-    padding-left: 90px;
+    padding-left: 45px;
     top: 0;
     left: 0;
     right: 0;

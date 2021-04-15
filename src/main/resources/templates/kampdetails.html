@@ -39,6 +39,12 @@
                 <br>
             </div>
         </div>
+        <h3 th:if="${kamp.getTakken().size()}>0">Takken aanwezig </h3>
+        <div th:each="tak, status: ${kamp.getTakken()}">
+            <a class="buttonLook mediumButton" th:href="@{'/takdetails/' + ${tak.id}}">
+                <span th:text="${tak.getTakName()}"></span></a>
+        </div>
+    </div>
     </div>
 
 
